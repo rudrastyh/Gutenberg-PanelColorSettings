@@ -77,9 +77,9 @@
 								title: 'Awesome Color Options',
 							 	colorSettings: [
 									{
-										//colors: colorSamples,
+										colors: colorSamples,
 										value: props.formColor.color,
-		                label: 'Form Color',
+		                						label: 'Form Color',
 										onChange: props.setFormColor,
 									}
 								]
