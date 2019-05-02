@@ -41,7 +41,6 @@
 		category: 'widgets',
 		keywords: [ 'email', 'subscribe', 'misha' ],
 
-		// we need two type of attributes – colorName and customColorName
 		attributes: {
 			formColor: {
 				type: 'string',
@@ -54,15 +53,12 @@
 		// The "edit" property must be a valid function.
 		edit: withColors( 'formColor' )( function( props ) {
 
-			// is it a predefined in a theme color?
 			var formClasses = (( props.formColor.class || '' ) + ' ' + props.className ).trim();
 
-			// form background color
 			var formStyles = {
 				backgroundColor: props.formColor.class ? undefined : props.attributes.customFormColor,
 			};
 
-			// as you can see the form button must change its color too
 			var buttonStyles = {
 				color: props.formColor.class ? undefined : props.attributes.customFormColor,
 			}
@@ -70,7 +66,6 @@
 			return (
 				el( Fragment, {},
 
-					// Color Settings
 					el( InspectorControls, {},
 						el( PanelColorSettings,
 							{
@@ -87,7 +82,6 @@
 						),
 					),
 
-					// Block markup
 					el( 'div', { className: formClasses, style: formStyles },
 						el( 'div', { className: 'misha-subscription-block-form-wrap' },
 							el( 'div', {},
